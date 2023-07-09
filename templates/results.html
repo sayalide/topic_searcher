@@ -1,0 +1,122 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results - {{ topic }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px #eee;
+        }
+
+        .result {
+            background-color: #fff;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .result:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .result p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .result a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .no-results {
+            color: #666;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .wiktionary-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+
+        .home-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("static/home.png");
+            background-size: cover;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .navbar {
+            position: relative;
+        }
+
+        .navbar .home-link {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .home-link:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="wiktionary-link">
+        <p>For more information, visit <a href="https://en.wiktionary.org/wiki/{{ topic }}" target="_blank">Wiktionary</a>.</p>
+    </div>
+    <div class="back-link">
+        <div class="navbar">
+            <a href="/" title="Home" class="home-link"><span class="home-icon"></span>Home</a>
+        </div>
+    </div>
+    <h1>Search Results - {{ topic }}</h1>
+    {% if results %}
+        {% for result in results %}
+            <div class="result">
+                <p>{{ result|safe }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-results">No results found.</p>
+    {% endif %}
+
+</body>
+</html>

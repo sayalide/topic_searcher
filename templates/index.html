@@ -1,0 +1,123 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topic Search App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px #eee;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .google-search {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .google-search h2 {
+            color: #333;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px #eee;
+        }
+
+        .google-search p {
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .google-search input[type="text"] {
+            width: 400px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .google-search input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            border-radius: 4px;
+            background-color: #4285F4;
+            transition: background-color 0.3s ease;
+        }
+
+        .google-search input[type="submit"]:hover {
+            background-color: #2663E1;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Topic Search App</h1>
+    <form action="/search" method="post">
+        <input type="text" name="topic" placeholder="Enter a topic">
+        <input type="submit" value="Search">
+    </form>
+
+    <div class="google-search">
+        <h2>Ask a Question</h2>
+        <p>If you have a question, Search here:</p>
+        <form action="https://www.google.com/search" method="get" target="_blank">
+            <input type="text" name="q" placeholder="Enter your question">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>
